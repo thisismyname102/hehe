@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empty Template</title>
+    <style>
+        .fixed-button {
+    position: fixed;
+    top: 530px;  /* 100 pixels from the top of the viewport */
+    left: 470px; /* 200 pixels from the left of the viewport */
+}
+    </style>
+    <script>
+var opened = false;
+let trapWindow = null;
+var timer = 0;
+var timer2 = 0
+
+
+document.addEventListener('keydown', function(event) {
+    if (event.code === 'Space') {
+        trapWindow = window.open('pinger.html','_blank','width=1366,height=760,scrollbars=yes')
+        setTimeout(function() {
+        console.log("I am delayed by 1 second");
+        }, 1000);     
+    }
+});
+window.addEventListener('message', function(event) {
+    // Check if the origin is "null" (the identifier for local files)
+    if(event.data == 'ping'){
+        timer = 0;
+    }
+    if(event.data == 'loaded'){
+    opened = true;
+    }
+}, false);
+ 
+
+
+    function updateCounter() {
+        timer = timer+1;
+        timer2 = timer2+1
+        if (timer > 3 && opened == true && timer2>200){
+            console.log("kill")
+        }
+    }
+
+
+    intervalId = setInterval(updateCounter, 5);
+    </script>
+    <style>
+        /* Basic styling to ensure the page fills the viewport */
+        body { min-height: 100vh; }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- The main application content area -->
+    <div id="content" class="p-4">
+        <button class="fixed-button">Click Me (Fixed)</button>
+    </div>
+
+    <!-- The place for your main JavaScript logic -->
+    <script>
+        // Your JavaScript code goes here.
+        // For example: console.log('Template loaded!');
+    </script>
+</body>
+</html>
