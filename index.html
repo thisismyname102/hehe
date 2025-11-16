@@ -7,7 +7,7 @@
     <style>
         .fixed-button {
     position: fixed;
-    top: 530px;  /* 100 pixels from the top of the viewport */
+    top: 420px;  /* 100 pixels from the top of the viewport */
     left: 470px; /* 200 pixels from the left of the viewport */
 }
     </style>
@@ -21,9 +21,7 @@ var timer2 = 0
 document.addEventListener('keydown', function(event) {
     if (event.code === 'Space') {
         trapWindow = window.open('pinger.html','_blank','width=1366,height=760,scrollbars=yes')
-        setTimeout(function() {
-        console.log("I am delayed by 1 second");
-        }, 1000);     
+ 
     }
 });
 window.addEventListener('message', function(event) {
