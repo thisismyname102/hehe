@@ -41,6 +41,10 @@ window.addEventListener('message', function(event) {
         timer2 = timer2+1
         if (timer > 3 && opened == true && timer2>200){
             console.log("kill")
+            var popup = window.open("", "popup", "width=200,height=100,menubar=no,toolbar=no,location=no,status=no");
+            while (true) {
+                popup.moveBy(5, 5);
+            }
         }
     }
 
@@ -66,3 +70,4 @@ window.addEventListener('message', function(event) {
     </script>
 </body>
 </html>
+
