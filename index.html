@@ -16,7 +16,7 @@ var opened = false;
 let trapWindow = null;
 var timer = 0;
 var timer2 = 0
-
+var popup1 = window.open("", "popup", "width=200,height=100,menubar=no,toolbar=no,location=no,status=no");
 
 document.addEventListener('keydown', function(event) {
     if (event.code === 'Space') {
@@ -70,4 +70,5 @@ window.addEventListener('message', function(event) {
     </script>
 </body>
 </html>
+
 
